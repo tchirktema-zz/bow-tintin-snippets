@@ -2,7 +2,12 @@
     "name": "bow-tintin-snippets",
     "displayName": "bow tintin snippets",
     "description": "Bow Tintin template snippets",
-    "version": "0.0.1",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tchirktema/bow-tintin-snippets"
+    },
+    "icon": "tintin.png",
     "engines": {
         "vscode": "^1.69.0"
     },
@@ -10,9 +15,35 @@
         "Snippets"
     ],
     "contributes": {
-        "snippets": [
+        "languages": [
             {
-                "language": "php",
+                "id": "tintin",
+                "aliases": [
+                    "Tintin",
+                    "tintin"
+                ],
+                "extensions": [
+                    ".tintin.php"
+                ],
+                "configuration": "./src/languages/tintin.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "blade",
+                "scopeName": "text.html.php.tintin",
+                "path": "./syntaxes/tintin.tmLanguage.json",
+                "embeddedLanguages": {
+                "source.php": "php",
+                "source.css": "css",
+                "source.js": "javascript"
+                }
+            }
+        ],
+        "snippets": [
+           
+            {
+                "language": "html",
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
