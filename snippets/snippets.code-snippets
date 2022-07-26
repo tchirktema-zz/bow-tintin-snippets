@@ -1,1 +1,209 @@
-{}
+{
+  /* Extending a layout */
+  "Extend layout": {
+    "prefix": "t:extends",
+    "body": "#extends('${1:name}')",
+    "description": "extends view layout"
+  },
+  "Content Section": {
+    "prefix": "t:section",
+    "body": [
+      "#section('${1:name}')",
+      "    $2",
+      "#endsection"
+    ],
+    "description": "content section"
+  },
+  "Content Section Show": {
+    "prefix": "t:section-show",
+    "body": [
+      "#section('$1')",
+      "    $2",
+      "#show"
+    ],
+    "description": "content section show"
+  },
+  /* Include sub-view */
+  "Include view": {
+    "prefix": "t:include",
+    "body": "#include('${1:name}')",
+    "description": "include view"
+  },
+  /* If Statements */
+  "If-block": {
+    "prefix": "t:if",
+    "body": [
+      "#if ($1)",
+      "    $2",
+      "#endif"
+    ],
+    "description": "#if block"
+  },
+  "If-else-block": {
+    "prefix": "t:if-else",
+    "body": [
+      "#if ($1)",
+      "    $2",
+      "#else",
+      "    $3",
+      "#endif"
+    ],
+    "description": "if-else block"
+  },
+  
+  /* Loops */
+  "For-block": {
+    "prefix": "t:for",
+    "body": [
+      "#for (\\$i = ${1:0}; \\$i < ${2:\\$count}; \\$i++)",
+      "    $3",
+      "#endfor"
+    ],
+    "description": "#for block"
+  },
+  "Foreach-block": {
+    "prefix": "t:foreach",
+    "body": [
+      "#foreach (${1:\\$collection} as ${2:\\$item})",
+      "    $3",
+      "#endforeach"
+    ],
+    "description": "#foreach block"
+  },
+  "forelse-block": {
+    "prefix": "t:forelse",
+    "body": [
+      "#forelse (${1:\\$collection} as ${2:\\$item})",
+      "    $3",
+      "#empty",
+      "    $4",
+      "#endforelse"
+    ],
+    "description": "#forelse block"
+  },
+  "while-block": {
+    "prefix": "t:while",
+    "body": [
+      "#while ($1)",
+      "    $2",
+      "#endwhile"
+    ],
+    "description": "#while block"
+  },
+ 
+  /* Comments */
+  "tintin comment": {
+    "prefix": "t:comment",
+    "body": "{# ${1:comment} #}",
+    "description": "comment block"
+  },
+  /* Display Data */
+  "tintin echo-data": {
+    "prefix": "t:echo",
+    "body": "{{ ${1:\\$data} }}",
+    "description": "echo data"
+  },
+  "tintin echo-unescaped-data": {
+    "prefix": "t:echo-html",
+    "body": "{!! ${1:\\$html_data} !!}",
+    "description": "echo unescaped data (allow html outputs)"
+  },
+  /* Service Injection */
+  "inject service": {
+    "prefix": "t:inject",
+    "body": "#inject('${1:name}', '${2:class}')",
+    "description": "#inject Service"
+  },
+  /* v5.3 - $loop variable */
+  "loop": {
+    "prefix": "t:loop",
+    "body": [
+     "#loop (${1:\\$collection} as ${2:\\$item})",
+      "    $3",
+      "#endforeach"
+     
+    ],
+    "description": "$loop block"
+  },
+  "php": {
+    "prefix": "t:php",
+    "body": [
+      "#php",
+      "    $1",
+      "#endphp"
+    ],
+    "description": "#php block code in view"
+  },
+  "includeIf": {
+    "prefix": "t:includeIf",
+    "body": "#includeIf('${1:view.name}'${2:, ['some' => 'data']})",
+    "description": "include a view that may or may not be present, you should use the #includeIf directive"
+  },
+  /* v5.4 */
+  "component": {
+    "prefix": "t:component",
+    "body": [
+      "#component('$1')",
+      "    $2",
+      "#endcomponent"
+    ],
+    "description": "component"
+  },
+  
+  "dump": {
+    "prefix": "t:dump",
+    "body": "#dump($1)",
+    "description": "dump"
+  },
+  /* Retrieving Translation Strings */
+  "lang": {
+    "prefix": "t:lang",
+    "body": "#lang('${1:messages.welcome}')",
+    "description": "lang"
+  },
+  
+  "env": {
+    "prefix": "t:env",
+    "body": [
+      "#env('${1:staging}')",
+      "    $2",
+      "#endenv"
+    ],
+    "description": "env"
+  },
+  "production": {
+    "prefix": "t:production",
+    "body": [
+      "#production",
+      "    $1",
+      "#endproduction"
+    ],
+    "description": "production"
+  },
+  "once": {
+    "prefix": "t:once",
+    "body": [
+      "#once",
+      "    $1",
+      "#endonce"
+    ],
+    "description": "define a portion of template that will only be evaluated once per rendering cycle"
+  },
+  /* v8.x */
+  "aware": {
+    "prefix": "t:aware",
+    "body": "#aware(['${1:propName}'])",
+    "description": "Accessing data from a parent component (Laravel 8.64)"
+  },
+  "js": {
+    "prefix": "t:js",
+    "body": "#js(${1:\\$data})",
+    "description": "This directive is useful to properly escape JSON within HTML quotes"
+  },
+  "class": {
+    "prefix": "t:class",
+    "body": "#class(['${1:p-4}', ${2:'font-bold' => true}])",
+    "description": "conditionally compiles a CSS class string. (Laravel 8.51)"
+  },
+  
+}
