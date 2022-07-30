@@ -415,11 +415,11 @@
           ]
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_#]) #(?:  append\n  |break\n  |continue\n  |csrf\n  |default\n  |each\n  |else\n  |overwrite\n  |parent\n  |sectionMissing\n  |show\n  |stack\n  |stop\n  |livewireStyles\n  |livewireScripts\n)\\b\n",
+          "match": "(?x)(?<![A-Za-z0-9_#]) #(?:  extends\n  |block\n  |include\n  |else\n  |unless\n  |each\n  |else\n  |overwrite\n  |parent\n  |sectionMissing\n  |show\n  |stack\n  |stop\n)\\b\n",
           "name": "keyword.tintin"
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_#]) #(end)? (?i:  auth\n  |can\n  |canany\n  |cannot\n  |component\n  |empty\n  |error\n  |for\n  |foreach\n  |forelse\n  |guest\n  |if\n  |isset\n  |lang\n  |prepend\n  |push\n  |section\n  |slot\n  |switch\n  |unless\n  |verbatim\n  |while\n  |task\n  |story\n  |finished\n  |production\n  |env\n  |once\n)\\b\n",
+          "match": "(?x)(?<![A-Za-z0-9_#]) #(end)? (?i:  for\n  |if\n  )\\b\n",
           "name": "keyword.tintin"
         },
         {
