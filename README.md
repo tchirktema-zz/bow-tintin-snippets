@@ -1,65 +1,65 @@
-# bow-tintin-snippets README
+# Bow Tintin Template Snippets
 
-This is the README for your extension "bow-tintin-snippets". After writing up a brief description, we recommend including the following sections.
+Bow Tintin snippets and syntax highlight support for Visual Studio Code.
+
+> Suggest to install Bow related extension: [Bow Tintin Snippets](https://marketplace.visualstudio.com/items?itemName=papac.bow-tintin)
+
+## User Settings
+
+Open `Preferences` -> `Settings`
+
+```json
+"emmet.triggerExpansionOnTab": true, // enable tab to expanse emmet tags
+"tintin.format.enable": true,         // if you would like to enable Tintin format
+```
+
+Specific settings for Tintin language
+
+```json
+"[tintin]": {
+    "editor.autoClosingBrackets": "always"
+},
+```
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Tintin syntax highlight
+- Tintin snippets
+- Emmet works in Tintin template
+- Tintin formatting
 
-For example if there is an image subfolder under your extension project workspace:
+## Tintin Syntax Hightlight
 
-\!\[feature X\]\(images/feature-x.png\)
+- Auto detected with `.tintin.php` extension
+- Manually switch language mode to `tintin` (`Ctrl + K, M` or `⌘ + K, M`)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Bow Tintin Snippets
 
-## Requirements
+| Trigger             | Snippet                                   |
+| ------------------- | ----------------------------------------- |
+| t:extends           | #extends                                  |
+| t:block             | #block ... #endblock                      |
+| t:include           | #include                                  |
+| t:inject            | #inject                                   |
+| t:if                | #if...#endif                              |
+| t:if-else           | #if...#else...#endif                      |
+| t:unless            | #unless                                   |
+| t:while             | #while...#endwhile                        |
+| t:for               | #for...#endfor                            |
+| t:loop              | #loop...#endloop                          |
+| t:comment           | #for...#endcomment                        |
+| t:echo              | {{ '' }}                                  |
+| t:jump              | #jump()                                   |
+| t:stop              | #stop()                                   |
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Contact
 
-## Extension Settings
+- [@tchirktema](https://twitter.com/tchirktema)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Credits
 
-For example:
+- Tintin language grammar is based on [Medalink syntax definition](https://github.com/bowphp/tintin)
 
-This extension contributes the following settings:
+## License
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Please read [License](LICENSE.md) for more information
